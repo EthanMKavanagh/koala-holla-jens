@@ -57,10 +57,6 @@ TO DOs
 
 Front End Needs
 
-    []Index.html
-        -[] Header
-        -[] Table
-        -[] Input Field / Button
 
 
    
