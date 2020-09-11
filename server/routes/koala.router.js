@@ -15,7 +15,7 @@ koalaRouter.post()
 
 
 // PUT
-koalaRouter.put()
+koalaRouter.put('/koalas/:)
 
 
 // DELETE
