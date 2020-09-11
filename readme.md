@@ -55,7 +55,16 @@ Your final product may look something like this:
 
 TO DOs
 
-Front End Needs
+    [] Database Creation
+        [] Transfer Database
+        
+    [] GET and POST routes for Koala Data - router.js
+        GET
+    [] Append Koala Data to DOM - client.js
+    [] "Ready for Transfer" Button on DOM
+        [] Button should only appear if ready_to_transfer column is N
+    
+
 
 
 
