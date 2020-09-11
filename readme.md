@@ -55,9 +55,9 @@ Your final product may look something like this:
 
 TO DOs
 
-    [] Database Creation - TYLER
-        [] Transfer Database.SQL
-        [] Add Database.SQL
+    [X] Database Creation - TYLER
+        [X] Transfer Database.SQL
+        [X] Add Database.SQL
         
     [] GET and POST routes for Koala Data 
 
