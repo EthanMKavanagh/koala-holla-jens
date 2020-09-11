@@ -8,7 +8,8 @@ const koalaRouter = express.Router();
 koalaRouter.get( '/:id', (req, res) => {
     console.log('Inside of Router get');
     let koalaId = req.params.id;
-    
+    // GET HERE
+
 }); // end GET
 
 // POST
