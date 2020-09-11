@@ -15,18 +15,22 @@ koalaRouter.get('/:id', (req, res) => {
 // POST
 koalaRouter.post('/', (req, res) => {
   console.log('in /post router', req.body);
-  const queryString = `INSERT INTO "koala_inventory" (id, name, gender, age, ready_to_transfer, notes) VALUES ( $1, $2, $3, $4, $5, $6 )`;
+  const queryString = `INSERT INTO "koala_inventory" (id, name, gender, age, ready_to_transfer, notes) VALUES ( $1, $2, $3, $4, $5,)`;
   Pool.query(queryString, [
-    req.body.id,
     req.body.name,
     req.body.age,
     req.body.gender,
     req.body.readyForTransfer,
     req.body.notes,
-  ]);
-  let newKoala = req.body;
-  res.send(newKoala);
-});
+  ])
+    .then((results) => {
+      res.sendStatus(201); //success, created
+    })
+    .catch((err) => {
+      console.log(err);
+      res.sendStatus(500);
+    }); //end query
+}); //end koala post
 
 // PUT
 koalaRouter.put('/:id', (req, res) => {
