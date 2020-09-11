@@ -4,11 +4,15 @@ const koalaRouter = express.Router();
 // DB CONNECTION
 
 
+
+
+
 // GET
 koalaRouter.get( '/:id', (req, res) => {
     console.log('Inside of Router get');
     let koalaId = req.params.id;
     // GET HERE
+    res.sendStatus(200);
 
 }); // end GET
 
@@ -21,15 +25,15 @@ koalaRouter.post('/', (req, res) => {
 
 
 // PUT
-koalaRouter.put('/koalas/:id', (req, res)=>{
+koalaRouter.put('/:id', (req, res)=>{
     let koalaId = req.params.id;
-    let queryString = '';
-    console.log('params:', songId, req.body);
+    //let queryString = '';
+    console.log('params:', koalaId, req.body);
     res.sendStatus(200); // 200 sends "OK"
 })
 
 
 // DELETE
-koalaRouter.delete()
+//koalaRouter.delete();
 
 module.exports = koalaRouter;
