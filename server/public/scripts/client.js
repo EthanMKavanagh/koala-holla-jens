@@ -16,11 +16,11 @@ function setupClickListeners() {
     // NOT WORKING YET :(
     // using a test object
     let koalaToSend = {
-      name: $('#nameIn'),
-      age: $('#ageIn'),
-      gender: $('#genderIn'),
+      name: $('#nameIn').val(),
+      age: $('#ageIn').val(),
+      gender: $('#genderIn').val(),
       readyForTransfer: false,
-      notes: $('#notesIn'),
+      notes: $('#notesIn').val(),
     };
     // call saveKoala with the new obejct
     saveKoala( koalaToSend );
@@ -38,6 +38,7 @@ function getKoalas(){
     let el = $('#viewKoalas');
     el.empty();
     for(let koala of koalas){
+      // TO DO "if" statement for readyToTransfer btn
       el.append(`
         <li>
           ${koala.name}
@@ -56,14 +57,14 @@ function getKoalas(){
   }); // end ajax GET
 } // end getKoalas
 
-function saveKoala( newKoala ){
-  console.log( 'in saveKoala', newKoala );
+function saveKoala( koalaToSend ){
+  console.log( 'in saveKoala', koalaToSend );
   // ajax call to server to get koalas
 
   $.ajax({
     method: 'POST',
     url: '/koalas',
-    data: newKoala
+    data: koalaToSend
   }).then(function (response) {
     console.log('back from server with:', response);
     //use ethan's get function here
