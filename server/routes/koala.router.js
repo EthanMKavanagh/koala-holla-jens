@@ -5,9 +5,11 @@ const koalaRouter = express.Router();
 
 
 // GET
-koalaRouter.get( '/', (req, res) => {
+koalaRouter.get( '/:id', (req, res) => {
     console.log('Inside of Router get');
-    res.sendStatus( 200 );
+    let koalaId = req.params.id;
+    // GET HERE
+
 }); // end GET
 
 // POST
