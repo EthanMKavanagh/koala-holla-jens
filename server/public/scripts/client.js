@@ -39,7 +39,8 @@ function getKoalas(){
     el.empty();
     for(let koala of koalas){
       // TO DO "if" statement for readyToTransfer btn
-      el.append(`
+      if(koala.readyForTransfer === 'false'){
+        el.append(`
         <li>
           ${koala.name}
           ${koala.age}
@@ -50,7 +51,23 @@ function getKoalas(){
           <button class="deleteBtn" data-id="${koala.id}">Delete</button>
         </li>
       `);
-    }
+      } // end if
+      else if(koala.readyForTransfer === 'true'){
+        el.append(`
+        <li>
+          ${koala.name}
+          ${koala.age}
+          ${koala.gender}
+          ${koala.readyForTransfer}
+          ${koala.notes}
+          <button class="deleteBtn" data-id="${koala.id}">Delete</button>
+        </li>
+      `);
+      } // end else if
+      else{
+        console.log('Something is wrong in GET appends!!!');
+      } // end else
+    } // end for
   }).catch( function(err){
     alert('error!');
     console.log( err);
