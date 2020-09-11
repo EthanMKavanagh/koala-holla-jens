@@ -61,3 +61,9 @@ function saveKoala( newKoala ){
   // ajax call to server to get koalas
  
 }
+
+function markAsReady(){
+  let koalaId = $(this).data('id');
+  let 
+
+}

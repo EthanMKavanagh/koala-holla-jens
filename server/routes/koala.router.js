@@ -19,7 +19,7 @@ koalaRouter.post('/', (req, res) => {
 
 
 // PUT
-koalaRouter.put()
+koalaRouter.put('/koalas/:)
 
 
 // DELETE
