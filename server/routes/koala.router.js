@@ -1,11 +1,16 @@
 const express = require('express');
-const { Pool } = require('pg');
+const pg = require('pg');
 const koalaRouter = express.Router();
 
 // DB CONNECTION
-
-
-
+const Pool = pg.Pool;
+const pool = new Pool({
+    database: "koala_holla",
+    host: "localhost",
+    post: 5432,
+    max: 12,
+    idleTimeoutMillis: 30000
+}); // end pool setup
 
 
 // GET
