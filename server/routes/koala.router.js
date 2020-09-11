@@ -27,10 +27,27 @@ koalaRouter.post('/', (req, res) => {
 // PUT
 koalaRouter.put('/:id', (req, res)=>{
     let koalaId = req.params.id;
-    //let queryString = '';
+    let queryString = '';
     console.log('params:', koalaId, req.body);
     res.sendStatus(200); // 200 sends "OK"
-})
+    if(req.body.readyStatus === false){
+        queryString = `UPDATE "koala_inventory"
+        SET "ready_to_transfer" = 'T'
+        WHERE "id" = $1;`;
+    }
+    else{
+        console.log('send better data');
+    }
+    pool.query(queryString, [koalaId])
+        .then(result =>{
+            console.log('Result from PUT:', result);
+            res.sendStatus(200);
+        })
+        .catch(err=>{
+            console.log('Error deleted record', err);
+            res.sendStatus(500);
+        });
+});
 
 
 // DELETE
