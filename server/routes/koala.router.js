@@ -13,11 +13,20 @@ koalaRouter.get( '/:id', (req, res) => {
 }); // end GET
 
 // POST
-koalaRouter.post()
+koalaRouter.post('/', (req, res) => {
+    console.log(req.body);
+    let newKoala = req.body
+    res.send(newKoala)
+})
 
 
 // PUT
-koalaRouter.put()
+koalaRouter.put('/koalas/:id', (req, res)=>{
+    let koalaId = req.params.id;
+    let queryString = '';
+    console.log('params:', songId, req.body);
+    res.sendStatus(200); // 200 sends "OK"
+})
 
 
 // DELETE
