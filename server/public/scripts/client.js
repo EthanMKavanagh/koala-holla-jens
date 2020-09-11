@@ -109,6 +109,7 @@ function markAsReady(){
   }).catch(function(err){
     alert('error!');
     console.log(err);
+  })
 });
 } // end markAsReady
 
