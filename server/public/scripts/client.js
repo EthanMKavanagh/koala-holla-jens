@@ -93,6 +93,7 @@ function saveKoala( koalaToSend ){
 }//end saveKoala
 
 function markAsReady(){
+  $( '.readyForTransferBtn' ).on( 'click', function(){
   let koalaId = $(this).data('id');
   let isReady = {
     readyStatus: true
