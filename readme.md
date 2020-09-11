@@ -55,14 +55,27 @@ Your final product may look something like this:
 
 TO DOs
 
-    [] Database Creation
-        [] Transfer Database
+    [] Database Creation - TYLER
+        [] Transfer Database.SQL
+        [] Add Database.SQL
         
-    [] GET and POST routes for Koala Data - router.js
-        GET
-    [] Append Koala Data to DOM - client.js
-    [] "Ready for Transfer" Button on DOM
-        [] Button should only appear if ready_to_transfer column is N
+    [] GET and POST routes for Koala Data 
+
+        GET routes (getting koala list and appending to DOM) - getKoalas(); - ETHAN
+            [] "Ready for Transfer" Button on DOM
+            [] Button should only appear if ready_to_transfer column is N
+
+        POST routes (adding new Koala Data) - JAKE
+            [] Adding Koala criteria 
+            [] Ready to Transfer should default N
+
+        PUT routes (change transfer status) - TYLER
+
+        DELETE routes (removing Koala from db) $(this) - JAKE 
+
+    
+
+   
     
 
 
