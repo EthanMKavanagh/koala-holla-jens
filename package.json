@@ -11,8 +11,12 @@
   "license": "ISC",
   "dependencies": {
 <<<<<<< HEAD
+<<<<<<< HEAD
     "express": "^4.17.1",
 =======
+=======
+    "body-parser": "^1.19.0",
+>>>>>>> 908196aef3c014f7e35eec806b78bce3f73a4273
     "express": "^4.16.4",
 >>>>>>> c50688dcb96904b5c6ba3575e8b9fd851d647ce9
     "pg": "^8.3.3"
