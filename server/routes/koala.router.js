@@ -1,15 +1,5 @@
 const express = require('express');
 const koalaRouter = express.Router();
-
-// DB CONNECTION
-
-// GET
-koalaRouter.get('/:id', (req, res) => {
-  console.log('Inside of Router get');
-  let koalaId = req.params.id;
-  // GET HERE
-  res.sendStatus(200);
-=======
 const pg = require('pg');
 const koalaRouter = express.Router();
 
