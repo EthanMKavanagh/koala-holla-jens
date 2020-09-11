@@ -10,7 +10,11 @@
   "author": "@devjana",
   "license": "ISC",
   "dependencies": {
+<<<<<<< HEAD
     "express": "^4.17.1",
+=======
+    "express": "^4.16.4",
+>>>>>>> c50688dcb96904b5c6ba3575e8b9fd851d647ce9
     "pg": "^8.3.3"
   }
 }
