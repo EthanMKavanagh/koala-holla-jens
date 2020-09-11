@@ -16,11 +16,11 @@ function setupClickListeners() {
     // NOT WORKING YET :(
     // using a test object
     let koalaToSend = {
-      name: 'testName',
-      age: 'testName',
-      gender: 'testName',
-      readyForTransfer: 'testName',
-      notes: 'testName',
+      name: $('#nameIn'),
+      age: $('#ageIn'),
+      gender: $('#genderIn'),
+      readyForTransfer: false,
+      notes: $('#notesIn'),
     };
     // call saveKoala with the new obejct
     saveKoala( koalaToSend );
@@ -59,11 +59,38 @@ function getKoalas(){
 function saveKoala( newKoala ){
   console.log( 'in saveKoala', newKoala );
   // ajax call to server to get koalas
- 
-}
+
+  $.ajax({
+    method: 'POST',
+    url: '/koalas',
+    data: newKoala
+  }).then(function (response) {
+    console.log('back from server with:', response);
+    //use ethan's get function here
+   getKoalas()
+  }).catch(function (err) {
+    alert('KOALA ERROR');
+    console.log(err);
+ }) //end koala POST ajax request
+}//end saveKoala
 
 function markAsReady(){
   let koalaId = $(this).data('id');
-  let 
+  let isReady = {
+    readyStatus: true
+  }
+  console.log('in markAsReady:', koalaId);
+  $.ajax({
+    method: 'PUT',
+    url: `/koalas/${koalaId}`, 
+    data: isReady
+  }).then(function(response){
+    console.log('back from markAsReady PUT with:', response);
+    getKoalas();
+  }).catch(function(err){
+    alert('error!');
+    console.log(err);
+});
 
 }
+
