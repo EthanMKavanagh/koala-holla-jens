@@ -91,6 +91,5 @@ function markAsReady(){
     alert('error!');
     console.log(err);
 });
-
-}
+} // end markAsReady
 
